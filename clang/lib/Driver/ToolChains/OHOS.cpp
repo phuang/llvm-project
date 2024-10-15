@@ -108,9 +108,9 @@ std::string OHOS::getMultiarchTriple(const llvm::Triple &T) const {
   case llvm::Triple::x86:
     return "i686-linux-ohos";
   case llvm::Triple::x86_64:
-    return "x86_64-linux-ohos";
+    return "x86_64-unknown-linux-ohos";
   case llvm::Triple::aarch64:
-    return "aarch64-linux-ohos";
+    return "aarch64-unknown-linux-ohos";
   }
   return T.str();
 }

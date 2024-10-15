@@ -1079,7 +1079,8 @@ char *__dfso_getcwd(char *buf, size_t size, dfsan_label buf_label,
 
 SANITIZER_INTERFACE_ATTRIBUTE
 char *__dfsw_get_current_dir_name(dfsan_label *ret_label) {
-  char *ret = get_current_dir_name();
+  // char *ret = get_current_dir_name();
+  char *ret = getcwd(0, 0);
   if (ret)
     dfsan_set_label(0, ret, strlen(ret) + 1);
   *ret_label = 0;
