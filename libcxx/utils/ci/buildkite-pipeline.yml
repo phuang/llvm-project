@@ -188,3 +188,12 @@ steps:
       queue: libcxx-builders
       os: android
     <<: *common
+
+- group: ' OpenHarmony'
+  steps:
+  - label: OpenHarmony Aarch64
+    command: libcxx/utils/ci/run-buildbot aarch64-linux-ohos
+    agents:
+      queue: libcxx-builders
+      os: ohos
+    <<: *common
