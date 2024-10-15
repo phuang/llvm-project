@@ -834,6 +834,12 @@ android-ndk-*)
     step "Running the libc++abi tests"
     ${NINJA} -vC "${BUILD_DIR}" check-cxxabi
 ;;
+aarch64-linux-ohos)
+    # Just reuse aarch64 for a beginning
+    clean
+    generate-cmake -C "${MONOREPO_ROOT}/libcxx/cmake/caches/OHOS.cmake"
+    check-runtimes
+;;
 #################################################################
 # Insert vendor-specific internal configurations below.
 #
